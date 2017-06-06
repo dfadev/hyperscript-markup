@@ -67,7 +67,7 @@ A shortcut for defining one child:
 (h1 > 'My title')
 ```
 
-More than one child can simply be nested by using indentation:
+More than one child can be nested by using indentation:
 ```javascript
     (nav)
     	(ul.links)
