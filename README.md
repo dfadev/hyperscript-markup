@@ -1,6 +1,6 @@
 # hyperscript-markup
 
-Transpile markup into hyperscript.  Compatible with React and Mithril.
+This is a Babel plugin that transpiles markup into hyperscript.  Compatible with React and Mithril.
 
 ## Template Syntax
 
