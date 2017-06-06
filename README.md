@@ -6,7 +6,7 @@ Transpile markup into hyperscript.  Compatible with React and Mithril.
 
 Views are declared by `$$<<`.  This will transpile a template to `React.createElement` calls.  
 
-You can also specify which hyperscript function to call like this: `$$m<<`, which would transpile to mithril `m(...)` calls.  `$$<<` is equivilent to `$$React.createElement<<`.
+You can also specify which hyperscript function to call like this: `$$m<<`, which would transpile to mithril `m(...)` calls.  `$$<<` is equivalent to `$$React.createElement<<`.
 
 ```javascript
 const view = $$<<
