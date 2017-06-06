@@ -15,22 +15,32 @@ You can specify which hyperscript function to call like this:
 * `$h>` -- Transpile to `h()`.
 * `$yourFunc>` -- Transpile to `yourFunc()`.
 
-```javascript
+For example, this template:
+````javascript
 const view = $>
-    	(div.intro)
-    		(ul)
-    			(li > 'Some')
-    			(li > 'List items')
-    		(ul.another-list)
-    			(list => item)
-    				(li > item)
-    		(form)
-    			(input(type="text", value = "Text value", onfocus = focus))
-    			(input(type="checkbox", required=true)
-					('Check this')
-
-ReactDOM.render(view, document.getElementById('react-app'))
-```
+		(div)
+			(h1 > 'Contacts')
+			(ul)
+				(contacts.filter(contact => contact.email) >> contact)
+					(li(key=contact.key))
+						(h2 > contact.name)
+						(a(href='mailto:' + contact.email) > contact.email)
+````
+Will transpile to this code:
+````javascript
+var view = React.createElement("div", {}, [React.createElement("h1", {}, ['Contacts']), React.createElement("ul", {}, [function () {
+	var t = contacts.filter(function (contact) {
+		return contact.email;
+	});
+	return t ? t.map(function (contact) {
+		return React.createElement("li", {
+			key: contact.key
+		}, [React.createElement("h2", {}, [contact.name]), React.createElement("a", {
+			href: 'mailto:' + contact.email
+		}, [contact.email])]);
+	}) : [];
+}()])]);
+````
 
 #### Elements
 
@@ -132,7 +142,6 @@ Using the `>>` operator adds a null check prior to map execution.
 ```javascript
 (links >> link)
 	(a (href=link.url, target='_blank') > link.title)
-
 ```
 
 Translates to:
@@ -146,9 +155,9 @@ else
 
 ## Sample
 
-An example can be found at `examples/simple`.
+An example can be found at [`examples/simple`](https://github.com/dfadev/hyperscript-markup/tree/master/examples/simple).
 
-Initial build:
+To build it:
 ```bash
 cd examples/simple
 npm install
