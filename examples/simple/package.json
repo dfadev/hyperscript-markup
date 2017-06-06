@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "hyperscript-markup": "^1.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -17,7 +18,11 @@
     "babel-preset-env": "^1.5.1"
   },
   "babel": {
-	  "plugins": ["../../lib/hm.js"],
-	  "presets": ["env"]
+    "plugins": [
+      "hyperscript-markup"
+    ],
+    "presets": [
+      "env"
+    ]
   }
 }
