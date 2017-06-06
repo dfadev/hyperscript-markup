@@ -8,18 +8,16 @@
   "devDependencies": {
     "babel-cli": "^6.0.0",
     "babel-preset-env": "^1.5.1",
-    "mocha": "^3.4.2"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "babel-preset-env": "^1.5.1",
+    "mocha": "^3.4.2",
     "babel-template": "^6.24.1",
     "babel-types": "^6.24.1"
   },
+  "main": "lib/hm.js",
   "author": "",
   "license": "MIT",
   "description": "",
   "babel": {
 	  "presets": ["env"]
-  }
+  },
+  "repository": "dfadev/hyperscript-markup"
 }
