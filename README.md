@@ -141,7 +141,7 @@ else
 
 An example can be found at `examples/simple`.
 
-Initial build: (this will run `npm install`)
+Initial build:
 ```bash
 cd examples/simple
 npm install
