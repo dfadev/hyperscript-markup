@@ -1,0 +1,11 @@
+$$<<
+	(div.klass)
+		('test')
+	(div+id2)
+		('test')
+		('second')
+		(div+id3)
+			('third')
+			(div(param=1))
+				('fourth')
+				(`${textval}`)

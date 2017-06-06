@@ -1,0 +1,25 @@
+{
+  "name": "hyperscript-markup",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-env": "^1.5.1",
+    "mocha": "^3.4.2"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.5.1",
+    "babel-template": "^6.24.1",
+    "babel-types": "^6.24.1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "babel": {
+	  "presets": ["env"]
+  }
+}

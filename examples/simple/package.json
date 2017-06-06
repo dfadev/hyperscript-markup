@@ -1,0 +1,23 @@
+{
+  "name": "hyperscript-markup-simple-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib && cp lib/index.js htdocs/index.js && cp node_modules/react/dist/react.min.js htdocs && cp node_modules/react-dom/dist/react-dom.min.js htdocs"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  },
+  "babel": {
+	  "plugins": ["../../lib/hm.js"],
+	  "presets": ["env"]
+  }
+}

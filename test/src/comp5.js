@@ -1,0 +1,2 @@
+$$<<
+	(Component(parameter="one"))
