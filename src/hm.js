@@ -9,21 +9,20 @@ export default function({ types: t }) {
 		visitor: {
 			BinaryExpression(path) {
 
-				if (path.node.operator != "<<") { return; }
+				if (path.node.operator != ">") { return; }
 				let functionPrefix = t.memberExpression(t.identifier("React"), t.identifier("createElement"));
 				if (t.isIdentifier(path.node.left)) {
 					let nm = path.node.left.name;
-					if (nm[0] != "$" || nm[1] != "$") return;
-					if (nm.length > 2)
-						functionPrefix = t.identifier(nm.substring(2));
+					if (nm[0] != "$") return;
+					if (nm.length > 1)
+						functionPrefix = t.identifier(nm.substring(1));
 
 				} else if (t.isMemberExpression(path.node.left)) {
 					var clean = generate(path.node.left, { comments: false });
-					
 					let nm = clean.code;
-					if (nm[0] != "$" || nm[1] != "$") return;
-					if (nm.length > 2)
-						functionPrefix = babylon.parseExpression(nm.substring(2));
+					if (nm[0] != "$") return;
+					if (nm.length > 1)
+						functionPrefix = babylon.parseExpression(nm.substring(1));
 				}
 
 				path.replaceWith(

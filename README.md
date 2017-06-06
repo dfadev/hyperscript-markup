@@ -1,15 +1,22 @@
 # hyperscript-markup
 
-This is a Babel plugin that transpiles markup into hyperscript.  Compatible with React and Mithril.
+This is a Babel plugin that transpiles markup into hyperscript.  Compatible with any hyperscript library that accepts hyperscript in the form of `hyperscriptFunction(tag, attributes, [children])`.  Works with [React](https://facebook.github.io/react/), [Mithril](https://mithril.js.org/), and [Hyperapp](https://github.com/hyperapp/hyperapp).
+
+
 
 ## Template Syntax
 
-Views are declared by `$$<<`.  This will transpile a template to `React.createElement` calls.  
+Views are declared by the magic sequence `$>`.  This will transpile the template that follows it into hyperscript calls.  
 
-You can also specify which hyperscript function to call like this: `$$m<<`, which would transpile to mithril `m(...)` calls.  `$$<<` is equivalent to `$$React.createElement<<`.
+You can specify which hyperscript function to call like this: 
+
+* `$>` -- Transpile to `React.createElement()`.
+* `$m>` -- Transpile to `m()`.
+* `$h>` -- Transpile to `h()`.
+* `$yourFunc>` -- Transpile to `yourFunc()`.
 
 ```javascript
-const view = $$<<
+const view = $>
     	(div.intro)
     		(ul)
     			(li > 'Some')
@@ -149,3 +156,4 @@ npm run build
 cd htdocs
 see index.html
 ```
+

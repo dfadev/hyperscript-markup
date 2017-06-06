@@ -1,4 +1,4 @@
-$$<<
+$>
 	(div.klass)
 		('test')
 	(div+id2)

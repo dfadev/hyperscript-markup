@@ -3,7 +3,7 @@ var contacts = [
 	{key: 2, name: "No email"}
 ]
 
-const view = $$React.createElement<<
+const view = $>
 		(div)
 			(h1 > 'Contacts')
 			(ul)
